@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using admLab1.Models;
 
 namespace admLab1.Controllers
 {
