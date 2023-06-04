@@ -42,7 +42,7 @@ namespace admLab1.IStorage
 
         public void Add(NvidiaGraphicsCardsGF value)
         {
-            if (value.Id != Guid.Empty) throw new IncorrectVideoCardException($"Cannot add value with predefined id {value.Id}");
+            if (value.Id == Guid.Empty) throw new IncorrectVideoCardException($"Cannot add value with predefined id {value.Id}");
 
             value.Id = Guid.NewGuid();
             this[value.Id] = value;
