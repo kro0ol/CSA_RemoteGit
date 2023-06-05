@@ -12,7 +12,12 @@ namespace admLab1.Controllers
     [ApiController]
     public class Lab1Controller : ControllerBase
     {
-        private static IStorage<NvidiaGraphicsCardsGF> _videoCardList = new videoCardList();
+        private IStorage<NvidiaGraphicsCardsGF> _videoCardList;
+
+        public Lab1Controller(IStorage<NvidiaGraphicsCardsGF> videoCardList)
+        {
+            _videoCardList = videoCardList;
+        }
 
         [HttpGet]
         public ActionResult<IEnumerable<NvidiaGraphicsCardsGF>> Get()
